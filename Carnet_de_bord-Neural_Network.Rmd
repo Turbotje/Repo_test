@@ -5,28 +5,14 @@ date: "25/02/2025"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+## 03/02/25 - Initiation du Projet 
+<div style="text-align: justify;">
+L'idée de projet que nous avons décider de suivre lors du brain storming fut la création de réseau neuronale informatique capable de discriminer les cas témoins des cas de patients atteints de diabète de type 1. Cependant partant de ce point beaucoup de choses sont encore à comprendre (Comment fonctionne un réseau neuronale ? Quel sont les bases sur lesquels s'appuient le machine learning ? etc..) et de choses à décider (Quel langage informatique ? Quel type de datas à l'entrée de ce réseau neuronal ?) 
 
+Nos premières intention étaient de coder en R (langage informatique que nous avons le plus étudié ), et d'utiliser soit les données d'expression géniques utiliser pour les différents projet de fil rouge, soit des données biomédical en lignes tel que les taux de glycémie etc... 
 
+Mais avant de ce mettre au code, il nous a fallu comprendre les fondements et le fonctionnement d'un Neural Network. Pour cela, nous avons donc décider de regarder tous les memes vidéos explicatives de youtube dont vous avez le lien ci-dessous ( les vidéos que nous avons tous regarder dans la semaine suivante sont les vidéos 1 à 4). 
+</div>
 
-## R Markdown
+[Lien vers les videos](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&ab_channel=3Blue1Brown)
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
