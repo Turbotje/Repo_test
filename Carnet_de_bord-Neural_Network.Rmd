@@ -7,12 +7,34 @@ output: html_document
 
 ## 03/02/25 - Initiation du Projet 
 <div style="text-align: justify;">
-L'idée de projet que nous avons décider de suivre lors du brain storming fut la création de réseau neuronale informatique capable de discriminer les cas témoins des cas de patients atteints de diabète de type 1. Cependant partant de ce point beaucoup de choses sont encore à comprendre (Comment fonctionne un réseau neuronale ? Quel sont les bases sur lesquels s'appuient le machine learning ? etc..) et de choses à décider (Quel langage informatique ? Quel type de datas à l'entrée de ce réseau neuronal ?) 
+L'idée de projet que nous avons décider de suivre lors du brain storming fut la création de réseau neuronale (ou Neural Network) informatique capable de discriminer les cas témoins des cas de patients atteints de diabète de type 1. Cependant partant de ce point beaucoup de choses sont encore à comprendre (Comment fonctionne un réseau neuronale ? Quel sont les bases sur lesquels s'appuient le machine learning ? etc..) et de choses à décider (Quel langage informatique ? Quel type de datas à l'entrée de ce réseau neuronal ?).
 
 Nos premières intention étaient de coder en R (langage informatique que nous avons le plus étudié ), et d'utiliser soit les données d'expression géniques utiliser pour les différents projet de fil rouge, soit des données biomédical en lignes tel que les taux de glycémie etc... 
 
 Mais avant de ce mettre au code, il nous a fallu comprendre les fondements et le fonctionnement d'un Neural Network. Pour cela, nous avons donc décider de regarder tous les memes vidéos explicatives de youtube dont vous avez le lien ci-dessous ( les vidéos que nous avons tous regarder dans la semaine suivante sont les vidéos 1 à 4). 
 </div>
-
 [Lien vers les videos](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&ab_channel=3Blue1Brown)
 
+## Semaine du 17/02/25 - Choix du langage, des datas, et début de codage 
+Cette semaine, nous avons donc tous regarder les videos.
+
+### Choix du langage de code 
+
+<div style="text-align: justify;">
+Puis, nous avons pris la décision de coder en langage pyhton pour la création de notre Neural Network. En effet d'après nos recherche ce langage est non seulement le plus utilisé pour la création de réseau neuronaux, mais aussi le plus simple pour les débutants. Le langage R quand à lui est plus complexe mais offre de meilleures représentations. Mais au vu de notre niveau concernant les Neural Network, nous avons préféré la version plus débudante. 
+</div>
+
+### Choix et acquisition de nos datas
+
+<div style="text-align: justify;">
+Après avoir fait des recherhces quand au types de datas le plus facilement exploitable par un réseau de neurone,et réfléchis au contextez de notre projet. Nous avions conlu, dans un premier temps qu'il était préférable d'utiliser des données d'expression géniques (RNAseq ou Puce).\
+Nous avons donc pensé à utiliser les données données par les prossefeurs dans le cadre du projet "fil_rouge" du semestre 1.\
+Cependant, pour notre projet ces données n'étaient pas parfaite. Premièrement pour les données de RNA-seq, nous avions des lignées cellulaires saines et des à risque de diabète de type I. Or, pour entrainer un Neural Network à "diagnostiquer" le diabète de type I grace à des données d'expression génique, ainsi que pour le tester, nous avons besoin avec certitudes des diagnostiques.\
+Ensuite pour les données obtenues par Puces, l'incovenient majeur était la très faible quantité de données. 
+
+Nous avons donc décider de chercher sur des bases de données des données de RNA-seq chez des personnes atteintes de diabète de type 2, et chez des personnes saines. Or nous n'avons rien trouver d'exploitable comme données pour le diabète de type I, mais nous avons trouver un jeu de données sur le diabète de type II. 
+
+[Lien ncbi vers nos données](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE81608)\
+[Lien vers l'article](https://pubmed.ncbi.nlm.nih.gov/27667665/)
+
+</div>
