@@ -46,7 +46,7 @@ Nous avons donc décider de chercher sur des bases de données des données de R
 Pour etre utilsé dans un Neural Network, nos datas avaient besoin d'être selon un format, précis. Avec les gènes en colones et les échantillons en lignes. De plus, il nous a fallu rajouter une colonne (appeler "label") portant l'information malade/sain (1/0). C'est donc la première chose que nous avons faite. 
 </div>
 
-####Création du réseau de neurones 
+#### Création du réseau de neurones 
 
 <div style="text-align: justify;">
 Après avoir mis nos données au bon format, nous sommes donc rentrer dans le vif du sujet en codant pour le Neural Network à l'aide de recherhce.\
@@ -58,36 +58,30 @@ Nous avons ensuite diviser notre jeu de données en deux dont 80% servent au tra
 <div style="text-align: justify;">
 Notre jeu de données contenait alors 40 000 gènes (colonnes) pour 1601 échantillons. Cependant ce grand nombre de gènes sont des données parasites pour le réseau car ne comportant pas de différences d'expression significatives entre les cas et les controlles. Pour palier à ça nous avons donc decider de ne garder que les 1000 gènes les plus significativement exprimé, et avons donc fait un trie des p.value obtenue par un test.t. 
 
-Propo : 
-
-Notre jeu de données contenait alors 40 000 gènes (colonnes) pour 1601 échantillons. Cependant ce grand nombre de gènes peut induire du parasitisme dans le réseau car ne comportant pas de différences d'expression significatives entre les cas et les controles. Après avoir donc séléctionner en fonction de la p-value (du test de?) (sachant qu'on aurait aussi pu les trier en fonction de : variance, Fold change, ACP trie
-
-On se met à tester plusieurs paramêtres: 
-
-Nombre de tour d'entrainement...
-
-Seed fixe (sert à la comparaison entre différents modèle)
-1 couche :
-40 000 gènes : Accuracy : 90 %
-8 000 gènes : Accuracy : 87,75% ; Accuracy :taux de similitude dans les gènes clés : 0 %, Loss ok
-
-x couche (sachant que moins de 10 000 input = 1 ou 2 couches intermédiaires)
-
-
-
-Puis une fois que l'on à identifier le modèle idéal on retourne sur une seed aléatoire
-
-
-
-
-
-nb :
-L'accuracy représente à quel point la prédiction du modèle est correcte. Si l'accuracy d'entraînement est très élevée (proche de 100%) mais que l'accuracy de validation est beaucoup plus basse, cela signifie que le modèle a appris trop spécifiquement les données d'entraînement et ne généralise pas bien aux nouvelles données
-Pareil si la validation loss ne diminue pas progressivement ca veut dire que le modèle est surentrainer sur des données spécifique.
+ou : Notre jeu de données contenait alors 40 000 gènes (colonnes) pour 1601 échantillons. Cependant ce grand nombre de gènes peut induire du parasitisme dans le réseau car ne comportant pas de différences d'expression significatives entre les cas et les controles. Après avoir donc séléctionner en fonction de la p-value (du test de?) (sachant qu'on aurait aussi pu les trier en fonction de : variance, Fold change, ACP trie
 
 </div>
 
+## 26/02/25 - Modulations de paramètres 
 
-## Semaine du 24/02/25 
-### 
+<div style="text-align: justify;">
+Afin d'améliorer l'efficacité de notre network, nous avons ensuite tester/ jouer sur plusieurs paramêtres. Et pour faire de bonne comparaison entre nos différents test, nous avons utiliser une "seed" fixe. Pour etre plus clair, un neural network par au début de son training systématiquement avec des poids et des biais random. Ce qui pour des test de comparaison peut poser problème. C'est pourquoi nous avons fait en sorte pour les test de toujours partir du même seed. 
 
+Modifications du nombre de tour d'entrainement :\  
+-\
+-\
+
+Modifications du nombre de gènes mit en input :\  
+Avec une seule "hidden layer" dans le neural network:\
+- 40 000 gènes : Accuracy : 90 %\
+- 8 000 gènes : Accuracy : 87,75% ; Accuracy :taux de similitude dans les gènes clés : 0 %, Loss ok
+
+x couche (nb : pour moins de 10 000 input = 1 ou 2 couches intermédiaires seulement):\
+- 
+-
+
+
+NB : L'accuracy représente à quel point la prédiction du modèle est correcte. Si l'accuracy d'entraînement est très élevée (proche de 100%) mais que l'accuracy de validation est beaucoup plus basse, cela signifie que le modèle a appris trop spécifiquement les données d'entraînement et ne généralise pas bien aux nouvelles données
+Pareil si la validation loss ne diminue pas progressivement ca veut dire que le modèle est surentrainer sur des données spécifique.
+
+</div>
