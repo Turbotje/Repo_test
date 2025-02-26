@@ -38,3 +38,28 @@ Nous avons donc décider de chercher sur des bases de données des données de R
 [Lien vers l'article](https://pubmed.ncbi.nlm.nih.gov/27667665/)
 
 </div>
+
+### Un peu de codage 
+#### Mise en forme des datas 
+
+<div style="text-align: justify;">
+Pour etre utilsé dans un Neural Network, nos datas avaient besoin d'être selon un format, précis. Avec les gènes en colones et les échantillons en lignes. De plus, il nous a fallu rajouter une colonne (appeler "label") portant l'information malade/sain (1/0). C'est donc la première chose que nous avons faite. 
+</div>
+
+####Création du réseau de neurones 
+
+<div style="text-align: justify;">
+Après avoir mis nos données au bon format, nous sommes donc rentrer dans le vif du sujet en codant pour le Neural Network à l'aide de recherhce.\
+Nous avons ensuite diviser notre jeu de données en deux dont 80% servent au training du système et 20% à la validation de cet entrainement. Puis bien sur, nous avons tester notre réseau. Et explorer des pistes en vu d'améliorer les résultats de valisation obtenue (accuracity : 55%). 
+</div>
+
+#### Réduction du nombre de paramètres 
+
+<div style="text-align: justify;">
+Notre jeu de données contenait alors 40 000 gènes (colonnes) pour 1601 échantillons. Cependant ce grand nombre de gènes sont des données parasites pour le réseau car ne comportant pas de différences d'expression significatives entre les cas et les controlles. Pour palier à ça nous avons donc decider de ne garder que les 1000 gènes les plus significativement exprimé, et avons donc fait un trie des p.value obtenue par un test.t. 
+</div>
+
+
+## Semaine du 24/02/25 
+### 
+
