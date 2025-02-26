@@ -80,6 +80,17 @@ x couche (nb : pour moins de 10 000 input = 1 ou 2 couches intermédiaires seule
 - 
 -
 
+Modifications du nombre de neurone dans la hidden layer:\
+Pour 40 000 gènes et une seule hidden layer:\
+- 64 neurones : Accuracy : 80.31%\
+- 100 neurones : Accuracy: 79.69%\
+- 150 neurones : Accuracy: 79.69%\
+- 40 neurones : Accuracy: 81.88%\
+Pour 1000 gènes et une seule hidden layer:\
+- 64 neurones : Loss: 0.2997, Val Loss: 0.3697, Val Accuracy: 82.19%\
+- 100 neurones : Loss: 0.2650, Val Loss: 0.3469, Val Accuracy: 84.38%\
+- 150 neurones : Loss: 0.2175, Val Loss: 0.3189, Val Accuracy: 86.56%\
+- 40 neurones : Accuracy: 77.50%\
 
 NB : L'accuracy représente à quel point la prédiction du modèle est correcte. Si l'accuracy d'entraînement est très élevée (proche de 100%) mais que l'accuracy de validation est beaucoup plus basse, cela signifie que le modèle a appris trop spécifiquement les données d'entraînement et ne généralise pas bien aux nouvelles données
 Pareil si la validation loss ne diminue pas progressivement ca veut dire que le modèle est surentrainer sur des données spécifique.
