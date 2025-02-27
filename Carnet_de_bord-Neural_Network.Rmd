@@ -67,19 +67,13 @@ ou : Notre jeu de données contenait alors 40 000 gènes (colonnes) pour 1601 é
 <div style="text-align: justify;">
 Afin d'améliorer l'efficacité de notre network, nous avons ensuite tester/ jouer sur plusieurs paramêtres. Et pour faire de bonne comparaison entre nos différents test, nous avons utiliser une "seed" fixe. Pour etre plus clair, un neural network par au début de son training systématiquement avec des poids et des biais random. Ce qui pour des test de comparaison peut poser problème. C'est pourquoi nous avons fait en sorte pour les test de toujours partir du même seed. 
 
-Modifications du nombre de tour d'entrainement :\  
--\
--\
+ # Modifications random 
 
+Modifications du nombre de tour d'entrainement :\  
 Modifications du nombre de gènes mit en input :\  
 Avec une seule "hidden layer" dans le neural network:\
 - 40 000 gènes : Accuracy : 90 %\
 - 8 000 gènes : Accuracy : 87,75% ; Accuracy :taux de similitude dans les gènes clés : 0 %, Loss ok
-
-x couche (nb : pour moins de 10 000 input = 1 ou 2 couches intermédiaires seulement):\
-- 
--
-
 Modifications du nombre de neurone dans la hidden layer:\
 Pour 40 000 gènes et une seule hidden layer:\
 - 64 neurones : Accuracy : 80.31%\
@@ -91,6 +85,10 @@ Pour 1000 gènes et une seule hidden layer:\
 - 100 neurones : Loss: 0.2650, Val Loss: 0.3469, Val Accuracy: 84.38%\
 - 150 neurones : Loss: 0.2175, Val Loss: 0.3189, Val Accuracy: 86.56%\
 - 40 neurones : Accuracy: 77.50%\
+
+# Modification selon la littérature en biologie
+100-64-32 : 
+
 
 NB : L'accuracy représente à quel point la prédiction du modèle est correcte. Si l'accuracy d'entraînement est très élevée (proche de 100%) mais que l'accuracy de validation est beaucoup plus basse, cela signifie que le modèle a appris trop spécifiquement les données d'entraînement et ne généralise pas bien aux nouvelles données
 Pareil si la validation loss ne diminue pas progressivement ca veut dire que le modèle est surentrainer sur des données spécifique.
