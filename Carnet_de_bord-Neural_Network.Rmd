@@ -57,9 +57,6 @@ Nous avons ensuite diviser notre jeu de données en deux dont 80% servent au tra
 
 <div style="text-align: justify;">
 Notre jeu de données contenait alors 40 000 gènes (colonnes) pour 1601 échantillons. Cependant ce grand nombre de gènes sont des données parasites pour le réseau car ne comportant pas de différences d'expression significatives entre les cas et les controlles. Pour palier à ça nous avons donc decider de ne garder que les 1000 gènes les plus significativement exprimé, et avons donc fait un trie des p.value obtenue par un test.t. 
-
-ou : Notre jeu de données contenait alors 40 000 gènes (colonnes) pour 1601 échantillons. Cependant ce grand nombre de gènes peut induire du parasitisme dans le réseau car ne comportant pas de différences d'expression significatives entre les cas et les controles. Après avoir donc séléctionner en fonction de la p-value (du test de?) (sachant qu'on aurait aussi pu les trier en fonction de : variance, Fold change, ACP trie
-
 </div>
 
 ## 26/02/25 - Modulations de paramètres 
