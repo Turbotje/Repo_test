@@ -56,7 +56,20 @@ Nous avons ensuite diviser notre jeu de données en deux dont 80% servent au tra
 #### Réduction du nombre de paramètres 
 
 <div style="text-align: justify;">
-Notre jeu de données contenait alors 40 000 gènes (colonnes) pour 1601 échantillons. Cependant ce grand nombre de gènes sont des données parasites pour le réseau car ne comportant pas de différences d'expression significatives entre les cas et les controlles. Pour palier à ça nous avons donc decider de ne garder que les 1000 gènes les plus significativement exprimé, et avons donc fait un trie des p.value obtenue par un test.t. 
+Notre jeu de données contenait alors 40 000 gènes (colonnes) pour 1601 échantillons. Cependant ce grand nombre de gènes sont des données parasites pour le réseau car ne comportant pas de différences d'expression significatives entre les cas et les controlles. Pour palier à ça nous avons donc decider de ne garder que les 1000 gènes (5000 plus tard dans le projet) les plus significativement exprimé, et avons donc fait un trie des p.value obtenue par un test.t. 
+
+Par la suite nous avons réaliser qu'un t.test n'était valable que lorsque les données suivent une distribution normale, et que dans le cas contraire il fallait plus utiliser un test de Mann-Whitney U. Nous avons donc modifier le code en ce sens. 
+</div>
+
+#### Pour résumé - le plan du code :
+
+<div style="text-align: justify;">
+Etape 1 : Allez chercher les données (Geo, projet transcriptomique patient/contrôle dans cellules du pancréas), labellisation des données (0 ou 1) : transformation du jeu de donnée pour le fit au modèle\
+Réduction du nombre de features (de 40 000 gènes à 5000 pour éviter la pollution du modèle et l’overfitting) - calcul de la p value, classification croissante et récuperation.\
+Etape 2 : Python : Définir le code pour la construction réseaux : utilisation de la librairy Pytorch et sklearn pour traitement des données et création du réseau de neurones de 1 couche (pcq moins de 10 000 échantillons dans notre modèl final)\
+Étape 3 : Entraîner le réseau de neurones (Optimisation de la puissance disponible…)\
+Etape 4: Interpréter les résultats\
+
 </div>
 
 ## 26/02/25 - Modulations de paramètres 
@@ -85,11 +98,6 @@ Pour 1000 gènes et une seule hidden layer:\
 
 Modifications du nombre de couches:\
 - Couche 1 : 512 neurones, Couche 2 : 256 neurones, Couche 3 : 128 neurone, pour 20 000 gènes : Exemple d'overfiting avec une train Accuracy de 100%, et validation Accuracy de 90%\
-
-
-# Modification selon la littérature en biologie
-100-64-32 : 
-
 
 NB : L'accuracy représente à quel point la prédiction du modèle est correcte. Si l'accuracy d'entraînement est très élevée (proche de 100%) mais que l'accuracy de validation est beaucoup plus basse, cela signifie que le modèle a appris trop spécifiquement les données d'entraînement et ne généralise pas bien aux nouvelles données
 Pareil si la validation loss ne diminue pas progressivement ca veut dire que le modèle est surentrainer sur des données spécifique.
